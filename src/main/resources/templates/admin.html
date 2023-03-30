@@ -14,16 +14,8 @@
 <body>
 
 <nav class="navbar navbar-expand-xl navbar-light text-light" style="background-color: #3a3a3d">
-    <div class="container-fluid">
-        <ul class="navbar-nav me-auto mb-2 mb-xl-0">
-            <li class="nav-item" style="font-weight: bold" th:text="${user.getEmail()}"></li>
-            <li class="nav-item" style="font-weight: lighter">&nbsp;with roles:&nbsp;</li>
-            <li class="nav-item">
-                <span style="font-weight: lighter" th:each="role:${user.getRoles()}"
-                      th:if="${role.getName().startsWith('ROLE_')}"
-                      th:text="${' '+ role.getName.replaceFirst('ROLE_', '')}"></span>
-            </li>
-        </ul>
+    <div class=" userDataBar col-4 align-self-center" style="text-align: left;transform: translate(20px) translateY(0px)">
+        <!--JS GENERATED-->
     </div>
     <div class="col align-self-center" style="text-align: right;transform: translate(-20px) translateY(0px);">
         <form th:action="@{/logout}" th:method="POST">

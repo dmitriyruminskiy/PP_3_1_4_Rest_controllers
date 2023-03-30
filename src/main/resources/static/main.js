@@ -1,7 +1,20 @@
 let allUsers, allRoles
+const infoBar = document.querySelector('.userDataBar')
 
 adminTemp()
 userTemp()
+
+function getCurrentUser(){
+    return  fetch('/api/user');
+}
+
+function bar(){
+    getCurrentUser()
+        .then(res => res.json())
+        .then(data =>
+            infoBar.innerHTML = `<span> ${data.email} with roles: ${data.roles.map(o => o.name.split("_")[1])}</span>`)
+}
+bar();
 
 function userTemp() {
     fetch("/api/user")
